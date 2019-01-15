@@ -34,7 +34,7 @@ public class Book {
 		this.title = title;
 		this.listOfAuthors = listOfAuthors;
 		this.numberOfPages = numberOfPages;
-		this.genre = genre;		
+		this.genre = genre;
 	}
 
 		

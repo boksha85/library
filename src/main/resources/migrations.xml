@@ -11,16 +11,16 @@
 			<column name="id" type="bigint" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="ISBN" type="varchar(255)">
+			<column name="isbn" type="varchar(255)">
 				<constraints nullable="false" />
 			</column>
 			<column name="title" type="varchar(255)">
 				<constraints nullable="false" />
 			</column>
-			<column name="listOfAuthors" type="varchar(255)">
+			<column name="listofauthors" type="varchar(255)">
 				<constraints nullable="false" />
 			</column>
-			<column name="numberOfPages" type="int">
+			<column name="numberofpages" type="int">
 				<constraints nullable="false" />
 			</column>
 			<column name="genre" type="varchar(255)">
@@ -31,78 +31,78 @@
 	<changeSet author="boksha"
 		id="addUniqueConstraint-isbn">
 		<addUniqueConstraint
-			columnNames="ISBN"
-			constraintName="ISBN" tableName="books" />
+			columnNames="isbn"
+			constraintName="isbn" tableName="books" />
 	</changeSet>
 	<changeSet author="boksha" id="3">
         <insert tableName="books">
-            <column name="ISBN" value="9780345535528"/>
+            <column name="isbn" value="9780345535528"/>
             <column name="title" value="A Game of Thrones"/>
-            <column name="listOfAuthors" value="George R. R. Martin"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
          <insert tableName="books">
-            <column name="ISBN" value="9780345533487"/>
+            <column name="isbn" value="9780345533487"/>
             <column name="title" value="A Knight of the Seven Kingdoms"/>
-            <column name="listOfAuthors" value="George R. R. Martin"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
          <insert tableName="books">
-            <column name="ISBN" value="9781524796280"/>
+            <column name="isbn" value="9781524796280"/>
             <column name="title" value="Fire and Blood: 300 Years Before A Game of Thrones"/>
-            <column name="listOfAuthors" value="George R. R. Martin"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
          <insert tableName="books">
-            <column name="ISBN" value="9780553579901"/>
+            <column name="isbn" value="9780553579901"/>
             <column name="title" value="A Clash of Kings"/>
-            <column name="listOfAuthors" value="George R. R. Martin"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
          <insert tableName="books">
-            <column name="ISBN" value="9780399593765"/>
+            <column name="isbn" value="9780399593765"/>
             <column name="title" value="The Book of Swords"/>
-            <column name="listOfAuthors" value="George R. R. Martin - Robin Hobb - Scott Lynch - Garth Nix"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin - Robin Hobb - Scott Lynch - Garth Nix"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
         <insert tableName="books">
-            <column name="ISBN" value="9780345549396"/>
+            <column name="isbn" value="9780345549396"/>
             <column name="title" value="The Mystery Knight: A Graphic Novel"/>
-            <column name="listOfAuthors" value="George R. R. Martin"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
         <insert tableName="books">
-            <column name="ISBN" value="9780765378774"/>
+            <column name="isbn" value="9780765378774"/>
             <column name="title" value="The Ice Dragon"/>
-            <column name="listOfAuthors" value="George R. R. Martin"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="George R. R. Martin"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
         <insert tableName="books">
-            <column name="ISBN" value="9780547928210"/>
+            <column name="isbn" value="9780547928210"/>
             <column name="title" value="The Fellowship of the Ring: Being the First Part of The Lord of the Rings"/>
-            <column name="listOfAuthors" value="J.R.R. Tolkien"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="J.R.R. Tolkien"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
         <insert tableName="books">
-            <column name="ISBN" value="9780547154114"/>
+            <column name="isbn" value="9780547154114"/>
             <column name="title" value="Tales from the Perilous Realm"/>
-            <column name="listOfAuthors" value="J.R.R. Tolkien"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="J.R.R. Tolkien"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
         <insert tableName="books">
-            <column name="ISBN" value="9780544636347"/>
+            <column name="isbn" value="9780544636347"/>
             <column name="title" value="The Art of The Lord of the Rings"/>
-            <column name="listOfAuthors" value="J.R.R. Tolkien"/>
-            <column name="numberOfPages" value="700"/>
+            <column name="listofauthors" value="J.R.R. Tolkien"/>
+            <column name="numberofpages" value="700"/>
             <column name="genre" value="Epic Fantasy"/>
         </insert>
     </changeSet>

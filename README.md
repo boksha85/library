@@ -31,9 +31,9 @@ java -jar target/library-0.0.1-SNAPSHOT.jar db status config.yml
 java -jar target/library-0.0.1-SNAPSHOT.jar db tag config.yml convey-test
 
 #  migrate schema
-java -jar target/library-0.0.1-SNAPSHOT.jar db migrate config.yml 
+java -jar target/library-0.0.1-SNAPSHOT.jar db migrate config.yml
 
-#  Rolling Back Your Schema if needed
+#  IF NEEDED Rolling Back Your Schema 
 java -jar target/library-0.0.1-SNAPSHOT.jar db rollback config.yml  convey-test
 
 #  Start application with
