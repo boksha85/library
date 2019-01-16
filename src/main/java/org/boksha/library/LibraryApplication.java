@@ -3,8 +3,8 @@ package org.boksha.library;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import org.boksha.library.api.BookResource;
 import org.boksha.library.db.BookDAO;
+import org.boksha.library.resources.BookResource;
 import org.skife.jdbi.v2.DBI;
 
 import io.dropwizard.Application;

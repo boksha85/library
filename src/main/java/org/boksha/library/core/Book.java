@@ -2,25 +2,31 @@ package org.boksha.library.core;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Book {
-	@NotNull
     @JsonProperty
 	private long id;
-	@NotNull
+	
+	@NotEmpty
     @JsonProperty
-	private String ISBN;
-	@NotNull
+	private String isbn;
+	
+	@NotEmpty
     @JsonProperty
 	private String title;
-	@NotNull
+	
+	@NotEmpty
     @JsonProperty
 	private String listOfAuthors;
-	@NotNull
+	
+	@NotNull	
     @JsonProperty
 	private int numberOfPages;
-	@NotNull
+	
+	@NotEmpty
     @JsonProperty
 	private String genre;
 	
@@ -28,16 +34,15 @@ public class Book {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Book(long id, String ISBN, String title, String listOfAuthors, int numberOfPages, String genre) {
+	public Book(long id, String isbn, String title, String listOfAuthors, int numberOfPages, String genre) {
 		this.id = id;
-		this.ISBN = ISBN;
+		this.isbn = isbn;
 		this.title = title;
 		this.listOfAuthors = listOfAuthors;
 		this.numberOfPages = numberOfPages;
 		this.genre = genre;
 	}
 
-		
 	public long getId() {
 		return id;
 	}
@@ -46,34 +51,44 @@ public class Book {
 		this.id = id;
 	}
 
-	public String getISBN() {
-		return ISBN;
+	public String getIsbn() {
+		return isbn;
 	}
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getListOfAuthors() {
 		return listOfAuthors;
 	}
+
 	public void setListOfAuthors(String listOfAuthors) {
 		this.listOfAuthors = listOfAuthors;
 	}
+
 	public int getNumberOfPages() {
 		return numberOfPages;
 	}
+
 	public void setNumberOfPages(int numberOfPages) {
 		this.numberOfPages = numberOfPages;
 	}
+
 	public String getGenre() {
 		return genre;
 	}
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+	
 }

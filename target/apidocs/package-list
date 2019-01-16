@@ -1,5 +1,5 @@
 org.boksha.library
-org.boksha.library.api
 org.boksha.library.core
 org.boksha.library.core.mapper
 org.boksha.library.db
+org.boksha.library.resources
