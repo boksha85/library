@@ -8,6 +8,7 @@ import org.boksha.library.resources.BookResource;
 import org.skife.jdbi.v2.DBI;
 
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.migrations.MigrationsBundle;
@@ -33,6 +34,7 @@ public class LibraryApplication extends Application<LibraryConfiguration> {
 				return configuration.getDataSourceFactory();
 			}
 		});
+		 bootstrap.addBundle(new AssetsBundle("/assets/", "/", "index.html"));
 	}
 
 	@Override
@@ -44,6 +46,7 @@ public class LibraryApplication extends Application<LibraryConfiguration> {
 		final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "postgresql");
 		final BookDAO dao = jdbi.onDemand(BookDAO.class);
 		environment.jersey().register(new BookResource(dao));
+		environment.jersey().setUrlPattern("/api/*");
 	}
 
 }
