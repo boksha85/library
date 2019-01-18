@@ -1,2 +1,3 @@
-/home/boksha/eclipse-workspace/library/src/test/java/org/boksha/library/core/MockBook.java
+/home/boksha/eclipse-workspace/library/src/test/java/org/boksha/library/core/MockData.java
+/home/boksha/eclipse-workspace/library/src/test/java/org/boksha/library/core/ParseResponse.java
 /home/boksha/eclipse-workspace/library/src/test/java/org/boksha/library/resources/BookResourceTest.java

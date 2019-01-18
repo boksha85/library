@@ -1,32 +1,26 @@
 package org.boksha.library.core;
 
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class Book {
     @JsonProperty
 	private long id;
-	
-	@NotEmpty
+    
     @JsonProperty
 	private String isbn;
 	
-	@NotEmpty
     @JsonProperty
 	private String title;
 	
-	@NotEmpty
     @JsonProperty
 	private String listOfAuthors;
-	
-	@NotNull	
+		
     @JsonProperty
-	private int numberOfPages;
+	private Integer numberOfPages;
 	
-	@NotEmpty
     @JsonProperty
 	private String genre;
 	
@@ -34,7 +28,7 @@ public class Book {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Book(long id, String isbn, String title, String listOfAuthors, int numberOfPages, String genre) {
+	public Book(long id, String isbn, String title, String listOfAuthors, Integer numberOfPages, String genre) {
 		this.id = id;
 		this.isbn = isbn;
 		this.title = title;
@@ -75,11 +69,11 @@ public class Book {
 		this.listOfAuthors = listOfAuthors;
 	}
 
-	public int getNumberOfPages() {
+	public Integer getNumberOfPages() {
 		return numberOfPages;
 	}
 
-	public void setNumberOfPages(int numberOfPages) {
+	public void setNumberOfPages(Integer numberOfPages) {
 		this.numberOfPages = numberOfPages;
 	}
 
@@ -90,5 +84,30 @@ public class Book {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Book)) {
+            return false;
+        }
+
+        final Book that = (Book) o;
+
+        return Objects.equals(this.id, that.id) &&
+                Objects.equals(this.isbn, that.isbn) &&
+                Objects.equals(this.title, that.title) &&
+                Objects.equals(this.listOfAuthors, that.listOfAuthors) &&
+                Objects.equals(this.numberOfPages, that.numberOfPages) &&
+                Objects.equals(this.genre, that.genre);
+    }
+	
+	
+	@Override
+    public int hashCode() {
+        return Objects.hash(id, isbn, title, listOfAuthors, numberOfPages, genre);
+    }
 	
 }

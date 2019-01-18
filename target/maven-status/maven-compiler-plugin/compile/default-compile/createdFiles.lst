@@ -4,5 +4,6 @@ org/boksha/library/db/BookDAO.class
 org/boksha/library/core/mapper/BookMapper.class
 org/boksha/library/resources/BookResource.class
 org/boksha/library/core/Book.class
+org/boksha/library/core/Helpers.class
 org/boksha/library/LibraryApplication.class
 org/boksha/library/LibraryConfiguration.class
