@@ -1,0 +1,98 @@
+body {
+	background-color: #0c0a0a;
+	white: white
+}
+
+h1 {
+	color: white;
+}
+
+.header {
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+.header-buttons {
+	font-size: 24px;
+	color: white;
+	background-color: #c73117;
+	border-radius: 12px;
+	width: 250px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.header-buttons:hover {
+	box-shadow: 0 8px 16px 0 rgba(255, 254, 254, 0.2), 0 6px 20px 0
+		rgba(86, 86, 86, 0.19);
+}
+
+.title {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: white;
+}
+
+.table-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	border-collapse: collapse;
+	display: inline-table;
+}
+
+th, td {
+	min-width: 150px;
+}
+
+th {
+	height: 50px;
+	font-size: 18px;
+	color: white;
+	border-bottom: 2px solid #c73117;
+	padding: 10px 8px;
+}
+
+td {
+	color: white;
+	padding: 9px 8px 0px 8px;
+}
+
+.books-table:hover {
+	background-color: #c73117;
+}
+
+.no-borders {
+	border: 0px;
+	padding: 6px;
+	font-size: 16px;
+}
+
+.insert-button {
+	font-size: 15px;
+	color: white;
+	background-color: #c73117;
+	border-radius: 12px;
+	width: 125px;
+	padding: 5px;
+	margin-top: 15px;
+	margin-left: 350px;
+}
+
+.insert-button:hover {
+	box-shadow: 0 8px 16px 0 rgba(255, 254, 254, 0.2), 0 6px 20px 0
+		rgba(86, 86, 86, 0.19);
+}
+
+.error-msg {
+	color: red;	
+	font-size: 24px;
+	padding: 5px;
+	font-size: 24px;
+	margin-bottom: 15px;
+}

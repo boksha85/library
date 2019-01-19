@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="css/book-styles.css">
+</head>
 <body onload="getLastFiveBooks()">
 	<div id="include-header"></div>
-	<h2>Last five books added:</h2>
-	<div id="table-of-books"></div>
+	<div class="title">
+		<h2>Last five books added:</h2>
+	</div>
+	<div id="table-of-books" class="table-wrapper"></div>
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
 		type="text/javascript"></script>
-	<script src="js/myScript.js"></script>
+	<script src="js/book-skript.js"></script>
 </body>
 </html>

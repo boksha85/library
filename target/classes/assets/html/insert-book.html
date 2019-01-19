@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="../css/book-styles.css">
+</head>
 <body onload="getBooks()">
-<div id="include-header"></div>
-<h2>Insert new book</h2>
-<div id="error-msg"></div>
-<table id="book-properties" border='0'>
-    <tr>
-       <td>ISBN:</td>
-       <td><input name="isbn" id="isbn" type="text"></td>
-    </tr>
-    <tr>
-       <td>Title:</td>
-       <td><input name="title" id="title" type="text"></td>
-    </tr>
-    <tr>
-       <td>List of Authors:</td>
-       <td><input name="list-of-authors" id="list-of-authors" type="text"></td>
-    </tr>
-    <tr>
-       <td>Number of Pages:</td>
-       <td><input name="number-of-pages" id="number-of-pages" type="text"></td>
-    </tr>
-    <tr>
-       <td>Genre:</td>
-       <td><input name="genre" id="genre" type="text"></td>
-    </tr>
-</table>
-<button id="insert-book" onClick="insertBook()">Save Book</button>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script src="../js/myScript.js"></script>
+	<div id="include-header"></div>
+	<div class="title">
+		<h2>Insert new book</h2>
+	</div>	
+	<div class="table-wrapper">
+	<div id="error-msg" class="error-msg"></div>
+		<table id="book-properties" class="no-borders">
+			<tr>
+				<td class="no-borders">ISBN:</td>
+				<td class="no-borders"><input name="isbn" id="isbn" type="text"></td>
+			</tr>
+			<tr>
+				<td class="no-borders">Title:</td>
+				<td class="no-borders"><input name="title" id="title"
+					type="text"></td>
+			</tr>
+			<tr>
+				<td class="no-borders">List of Authors:</td>
+				<td class="no-borders"><input name="list-of-authors"
+					id="list-of-authors" type="text"></td>
+			</tr>
+			<tr>
+				<td class="no-borders">Number of Pages:</td>
+				<td class="no-borders"><input name="number-of-pages"
+					id="number-of-pages" type="text"></td>
+			</tr>
+			<tr>
+				<td class="no-borders">Genre:</td>
+				<td class="no-borders"><input name="genre" id="genre"
+					type="text"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button class="insert-button" id="insert-book"
+						onClick="insertBook()">Save Book</button></td>
+			</tr>
+		</table>
+	</div>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+		type="text/javascript"></script>
+	<script src="../js/book-skript.js"></script>
 
 </body>
 </html>
