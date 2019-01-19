@@ -1,5 +1,5 @@
 body {
-	background-color: #0c0a0a;
+	background-color: #272424;
 	white: white
 }
 
@@ -48,6 +48,7 @@ table {
 
 th, td {
 	min-width: 150px;
+	text-align:left;
 }
 
 th {
