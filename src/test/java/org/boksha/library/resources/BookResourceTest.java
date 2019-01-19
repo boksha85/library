@@ -42,9 +42,15 @@ public class BookResourceTest {
 	private Book book;	
 	private Book bookWithoutIsbn;
 	private Book bookWithNullIsbn;
+	private Book bookWithoutTitle;
+	private Book bookWithNullTitle;
+	private Book bookWithoutListOfAuthors;
+	private Book bookWithNullListOfAuthors;
 	private Book bookWithZeroPages;
 	private Book bookWithMinusPages;
 	private Book bookWithNullPages;
+	private Book bookWithoutGenre;
+	private Book bookWithNullGenre;
 	
 	private List<Book> books;
 
@@ -58,9 +64,15 @@ public class BookResourceTest {
 		book = MockData.getBook();
 		bookWithoutIsbn  = MockData.getBookWithEmptyIsbn();
 		bookWithNullIsbn  = MockData.getBookWithNullIsbn();
+		bookWithoutTitle  = MockData.getBookWithEmptyTitle();
+		bookWithNullTitle  = MockData.getBookWithNullTitle();
+		bookWithoutListOfAuthors  = MockData.getBookWithEmptyListOfAuthors();
+		bookWithNullListOfAuthors  = MockData.getBookWithNullListOfAuthors();
 		bookWithZeroPages = MockData.getBookWithZeroPages();
 		bookWithMinusPages = MockData.getBookWithMinusPages();
-		bookWithNullPages = MockData.getBookWithNullPages();		
+		bookWithNullPages = MockData.getBookWithNullPages();
+		bookWithoutGenre  = MockData.getBookWithEmptyGenre();
+		bookWithNullGenre  = MockData.getBookWithNullGenre();
 	}
 
 	@After
@@ -73,6 +85,15 @@ public class BookResourceTest {
 		when(BOOK_DAO.getAllBooks()).thenReturn(books);
 		List<Book> response = resources.target("/books").request().get(new GenericType<List<Book>>() {
 		});
+		assertThat(response).containsAll(books);
+	}
+	
+	@Test
+	public void getLast5Books() {
+		when(BOOK_DAO.getLastFiveBooks()).thenReturn(books);
+		List<Book> response = resources.target("/books/lastfive").request().get(new GenericType<List<Book>>() {
+		});
+		assertEquals(response.size(), 5);
 		assertThat(response).containsAll(books);
 	}
 
@@ -126,7 +147,7 @@ public class BookResourceTest {
 		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_ISBN);
 
 	}
-
+	
 	@Test
 	public void createBookEmptyIsbn() {
 		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
@@ -137,6 +158,56 @@ public class BookResourceTest {
 		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
 		assertEquals(reply.getCode(), 400);
 		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_ISBN);
+	}
+
+	@Test
+	public void createBookEmptyTitle() {
+		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
+				.post(Entity.entity(bookWithoutTitle, MediaType.APPLICATION_JSON_TYPE));
+
+		ParseResponse reply = response.readEntity(ParseResponse.class);
+
+		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
+		assertEquals(reply.getCode(), 400);
+		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_TITLE);
+	}
+	
+	@Test
+	public void createBookNullTitle() {
+		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
+				.post(Entity.entity(bookWithNullTitle, MediaType.APPLICATION_JSON_TYPE));
+
+		ParseResponse reply = response.readEntity(ParseResponse.class);
+
+		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
+		assertEquals(reply.getCode(), 400);
+		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_TITLE);
+
+	}
+	
+	@Test
+	public void createBookEmptyListOfAuthors() {
+		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
+				.post(Entity.entity(bookWithoutListOfAuthors, MediaType.APPLICATION_JSON_TYPE));
+
+		ParseResponse reply = response.readEntity(ParseResponse.class);
+
+		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
+		assertEquals(reply.getCode(), 400);
+		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_LIST_OF_AUTHORS);
+	}
+	
+	@Test
+	public void createBookNullListOfAuthors() {
+		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
+				.post(Entity.entity(bookWithNullListOfAuthors, MediaType.APPLICATION_JSON_TYPE));
+
+		ParseResponse reply = response.readEntity(ParseResponse.class);
+
+		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
+		assertEquals(reply.getCode(), 400);
+		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_LIST_OF_AUTHORS);
+
 	}
 
 	@Test
@@ -175,5 +246,30 @@ public class BookResourceTest {
 		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
 		assertEquals(reply.getCode(), 400);
 		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_NUMBER_OF_PAGES);
+	}
+	
+	@Test
+	public void createBookEmptyGenre() {
+		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
+				.post(Entity.entity(bookWithoutGenre, MediaType.APPLICATION_JSON_TYPE));
+
+		ParseResponse reply = response.readEntity(ParseResponse.class);
+
+		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
+		assertEquals(reply.getCode(), 400);
+		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_GENRE);
+	}
+	
+	@Test
+	public void createBookNullGenre() {
+		Response response = resources.target("/books/add").request(MediaType.APPLICATION_JSON_TYPE)
+				.post(Entity.entity(bookWithNullGenre, MediaType.APPLICATION_JSON_TYPE));
+
+		ParseResponse reply = response.readEntity(ParseResponse.class);
+
+		assertThat(response.getStatusInfo()).isEqualTo(Response.Status.BAD_REQUEST);
+		assertEquals(reply.getCode(), 400);
+		assertEquals(reply.getMessage(), CustomizedErrorMessages.INVALID_GENRE);
+
 	}
 }

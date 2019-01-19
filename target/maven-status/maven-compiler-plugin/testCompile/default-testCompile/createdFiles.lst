@@ -1,4 +1,5 @@
 org/boksha/library/core/MockData.class
 org/boksha/library/core/ParseResponse.class
+org/boksha/library/resources/BookResourceTest$2.class
 org/boksha/library/resources/BookResourceTest.class
 org/boksha/library/resources/BookResourceTest$1.class

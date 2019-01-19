@@ -15,6 +15,9 @@ public interface BookDAO {
 
 	@SqlQuery("select * from books")
 	List<Book> getAllBooks();
+	
+	@SqlQuery("select * from books order by id desc limit 5")
+	List<Book> getLastFiveBooks();
 
 	@SqlUpdate("insert into books (isbn, title, listofauthors, numberofpages, genre) "
 			+ "values (:isbn, :title, :listOfAuthors, :numberOfPages, :genre)")

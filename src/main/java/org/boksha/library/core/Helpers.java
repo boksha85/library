@@ -12,10 +12,10 @@ public class Helpers {
 		if (book.getIsbn() == null || book.getIsbn().equalsIgnoreCase("")) {
 			throw new WebApplicationException(CustomizedErrorMessages.INVALID_ISBN, Status.BAD_REQUEST);
 		}
-		if (book.getTitle() == null || book.getIsbn().equalsIgnoreCase("")) {
+		if (book.getTitle() == null || book.getTitle().equalsIgnoreCase("")) {
 			throw new WebApplicationException(CustomizedErrorMessages.INVALID_TITLE, Status.BAD_REQUEST);
 		}
-		if (book.getListOfAuthors() == null || book.getIsbn().equalsIgnoreCase("")) {
+		if (book.getListOfAuthors() == null || book.getListOfAuthors().equalsIgnoreCase("")) {
 			throw new WebApplicationException(CustomizedErrorMessages.INVALID_LIST_OF_AUTHORS, Status.BAD_REQUEST);
 		}
 		if (book.getNumberOfPages() == null || book.getNumberOfPages() <= 0) {

@@ -31,6 +31,14 @@ public class BookResource {
 		return books;
 	}
 
+	@GET
+	@Path("/lastfive")
+	public List<Book> getLastFiveBooks() {
+		List<Book> books = bookDAO.getLastFiveBooks();
+
+		return books;
+	}
+	
 	@POST
 	@Path("/add")
 	public void addBook(Book book) {

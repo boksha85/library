@@ -35,6 +35,8 @@ public class LibraryApplication extends Application<LibraryConfiguration> {
 			}
 		});
 		 bootstrap.addBundle(new AssetsBundle("/assets/", "/", "index.html"));
+		 bootstrap.addBundle(new AssetsBundle("/assets/js", "/js", null, "js"));
+		 bootstrap.addBundle(new AssetsBundle("/assets/html", "/html", null, "html"));
 	}
 
 	@Override
