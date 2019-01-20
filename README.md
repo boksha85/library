@@ -45,10 +45,13 @@ java -jar target/library-0.0.1-SNAPSHOT.jar server config.yml
 http://localhost:8080
 
 # Exposed APIs:
-GET  /api/books 			– returns all books from database
-GET  /api/books/lastfive 	– returns last five inserted records
-GET  /api/books/get/{title} – returns all books that contains search parameter sent as title
-POST /api/books/add/		– store new record in database, in body we should send Book as json object.
+- GET  /api/books 			– returns all books from database
+
+- GET  /api/books/lastfive 	– returns last five inserted records
+
+- GET  /api/books/get/{title} – returns all books that contains search parameter sent as title
+
+- POST /api/books/add/		– store new record in database, in body we should send Book as json object.
 
 # Test APIs with postman
 
