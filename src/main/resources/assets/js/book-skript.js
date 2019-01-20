@@ -21,11 +21,17 @@ function populateHtmlTable(data) {
 	let trHTML;
 	data.forEach(function(item) {
 		let book = getBook(item);
-		trHTML += '<tr class="books-table"><td>' + book.isbn + '</td><td>'
-				+ book.title + '</td><td>' + book.listOfAuthors + '</td><td>'
-				+ book.numberOfPages + '</td><td>' + book.genre + '</td></tr>';
+		trHTML += '<tr id="row-book" class="books-table"><td>' + book.isbn
+				+ '</td><td>' + book.title + '</td><td>' + book.listOfAuthors
+				+ '</td><td>' + book.numberOfPages + '</td><td>' + book.genre
+				+ '</td></tr>';
 	});
 	$('#books').append(trHTML);
+}
+function removeBooksFromTable() {
+	while ($("#row-book").text()) {
+		$("#row-book").remove();
+	}
 }
 
 function areBookAtributesOk(isbn, title, listOfAuthors, numberOfPages, genre) {
@@ -84,9 +90,10 @@ function getBooks() {
 }
 
 function searchBook() {
+	removeBooksFromTable();
 	let title = $("#search-title").val();
 	let api = "/api/books/get/" + title;
- 	$.get(api, function(data, status) {
+	$.get(api, function(data, status) {
 		populateHtmlTable(data);
 	});
 }
