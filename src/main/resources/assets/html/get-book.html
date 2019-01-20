@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/book-styles.css">
+</head>
+<body>
+	<div id="include-header"></div>	
+	<div class="title">
+		<h2>Information about book by title</h2>
+	</div>	
+	<div class="table-wrapper">
+	<div id="error-msg" class="error-msg"></div>
+		<table id="book-properties" class="no-borders">			
+			<tr>
+				<td class="no-borders">Title:</td>
+				<td class="no-borders"><input name="search-title" id="search-title"
+					type="text"></td>
+				<td><button class="get-book-button" id="get-book-button"
+						onClick="searchBook()">Get Book</button></td>
+			</tr>
+		</table>
+	</div>
+	<div id="table-of-books" class="table-wrapper"></div>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+		type="text/javascript"></script>
+	<script src="../js/book-skript.js"></script>
+
+</body>
+</html>

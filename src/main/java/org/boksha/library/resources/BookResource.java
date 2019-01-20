@@ -4,6 +4,7 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
@@ -27,6 +28,15 @@ public class BookResource {
 	@GET
 	public List<Book> getBooks() {
 		List<Book> books = bookDAO.getAllBooks();
+
+		return books;
+	}
+	
+	@GET
+	@Path("/get/{title}")
+	public List<Book> getBook(@PathParam("title") String title) {
+		String condition = Helpers.verifyTitleAndBuldingCondition(title);
+		List<Book> books = bookDAO.getInformationAboutBook(condition);
 
 		return books;
 	}

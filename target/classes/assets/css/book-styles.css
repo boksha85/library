@@ -90,6 +90,22 @@ td {
 		rgba(86, 86, 86, 0.19);
 }
 
+.get-book-button {
+	font-size: 15px;
+	color: white;
+	background-color: #c73117;
+	border-radius: 12px;
+	width: 125px;
+	padding: 5px;
+	margin-top: 15px;
+	margin-left: 350px;
+}
+
+.get-book-button:hover {
+	box-shadow: 0 8px 16px 0 rgba(255, 254, 254, 0.2), 0 6px 20px 0
+		rgba(86, 86, 86, 0.19);
+}
+
 .error-msg {
 	color: red;	
 	font-size: 24px;

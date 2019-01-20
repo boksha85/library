@@ -4,7 +4,9 @@
 	"description": "",
 	"order": [
 		"63c2eb59-f598-9f60-ca45-6b58372cd733",
+		"7ffec0cf-13a7-45e9-eeed-df02e23f3458",
 		"18f6c27d-4abf-bd57-3d4d-bd724bf3f896",
+		"b2509acd-0695-d999-c73f-7633d95cfdd4",
 		"d1774c3d-74ad-8999-a290-acff0adc528a",
 		"bf75478d-d990-f779-868c-0411dd043e01",
 		"30f090d2-b102-a555-14a1-362b4ce422d7",
@@ -225,6 +227,28 @@
 			"rawModeData": "{\n\t\"isbn\" : \"117335445162071\",\n\t\"title\" : \"Harry Potter Paperback Box Set (Books 1-7)\",\n\t\"listOfAuthors\" : \"J. K. Rowling\",\n\t\"numberOfPages\" : -1,\n\t\"genre\" : \"Fantasy\"\n}"
 		},
 		{
+			"id": "7ffec0cf-13a7-45e9-eeed-df02e23f3458",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/books/get/harr",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1547980666284,
+			"name": "Get Information About Book",
+			"description": "",
+			"collectionId": "f57f5b95-a7de-b814-9092-eb3fdf849d15",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
 			"id": "802032c8-d098-98ff-34f3-d721611e0ab5",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -373,6 +397,29 @@
 			"collectionId": "f57f5b95-a7de-b814-9092-eb3fdf849d15",
 			"responses": [],
 			"rawModeData": "{\n\t\"isbn\" : \"117335445162071\",\n\t\"title\" : \"Harry Potter Paperback Box Set (Books 1-7)\",\n\t\"listOfAuthors\" : \"\",\n\t\"numberOfPages\" : 500,\n\t\"genre\" : \"Fantasy\"\n}"
+		},
+		{
+			"id": "b2509acd-0695-d999-c73f-7633d95cfdd4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/books",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1547978639835,
+			"name": "Get Information about Book",
+			"description": "",
+			"collectionId": "f57f5b95-a7de-b814-9092-eb3fdf849d15",
+			"responses": [],
+			"rawModeData": ""
 		},
 		{
 			"id": "bbe048be-7079-0d63-1df7-787619d85e2f",

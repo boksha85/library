@@ -83,6 +83,14 @@ function getBooks() {
 	});
 }
 
+function searchBook() {
+	let title = $("#search-title").val();
+	let api = "/api/books/get/" + title;
+ 	$.get(api, function(data, status) {
+		populateHtmlTable(data);
+	});
+}
+
 function addBook(book) {
 	$.ajax({
 		url : "/api/books/add",
@@ -125,6 +133,9 @@ function insertBook() {
 
 function goToAddNewBook() {
 	$(location).attr("href", "/html/insert-book.html");
+}
+function goToGetBook() {
+	$(location).attr("href", "/html/get-book.html");
 }
 function goToGetBooks() {
 	$(location).attr("href", "/html/get-all-books.html");

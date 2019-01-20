@@ -18,6 +18,9 @@ public interface BookDAO {
 	
 	@SqlQuery("select * from books order by id desc limit 5")
 	List<Book> getLastFiveBooks();
+	
+	@SqlQuery("select * from books where UPPER(title) like UPPER(:condition)")
+	List<Book> getInformationAboutBook(@Bind("condition") String condition);
 
 	@SqlUpdate("insert into books (isbn, title, listofauthors, numberofpages, genre) "
 			+ "values (:isbn, :title, :listOfAuthors, :numberOfPages, :genre)")

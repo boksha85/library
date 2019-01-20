@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MockData {
-	
+
 	public static Book getBook() {
 		Book book = new Book(1, "123456789", "book1", "boksha", 100, "test");
 		return book;
+	}
+	
+	public static List<Book> getBookByTitle(){
+		List<Book> books = new ArrayList<Book>(); 
+		books.add(new Book(1, "123456789", "book1", "boksha", 100, "test"));
+		return books;
 	}
 	public static Book getBookWithEmptyIsbn() {
 		Book book = new Book(1, "", "book1", "boksha", 100, "test");

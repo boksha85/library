@@ -5,6 +5,15 @@ import javax.ws.rs.core.Response.Status;
 
 public class Helpers {
 
+	public static String verifyTitleAndBuldingCondition(String title) {
+		if (title == null || title.equalsIgnoreCase("")) {
+			throw new WebApplicationException(CustomizedErrorMessages.INVALID_TITLE,
+			 Status.BAD_REQUEST);
+		}
+
+		return "%" + title + "%";
+	}
+
 	public static void verifyBook(Book book) {
 		if (book == null) {
 			throw new WebApplicationException(CustomizedErrorMessages.INVALID_BOOK, Status.BAD_REQUEST);

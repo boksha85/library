@@ -53,6 +53,7 @@ public class BookResourceTest {
 	private Book bookWithNullGenre;
 	
 	private List<Book> books;
+	private List<Book> booksByTitle;
 
 	@ClassRule
 	public static final ResourceTestRule resources = ResourceTestRule.builder().addResource(new BookResource(BOOK_DAO))
@@ -61,6 +62,7 @@ public class BookResourceTest {
 	@Before
 	public void setUp() {
 		books = MockData.getBooks();
+		booksByTitle = MockData.getBookByTitle();
 		book = MockData.getBook();
 		bookWithoutIsbn  = MockData.getBookWithEmptyIsbn();
 		bookWithNullIsbn  = MockData.getBookWithNullIsbn();
@@ -80,6 +82,16 @@ public class BookResourceTest {
 		reset(BOOK_DAO);
 	}
 
+	@Test
+	public void getBook() {
+		when(BOOK_DAO.getInformationAboutBook("%" + book.getTitle() + "%")).thenReturn(booksByTitle);
+		List<Book> response = resources.target("/books/get/" + book.getTitle()).request().get(new GenericType<List<Book>>() {
+		});
+		assertEquals(response.size(), 1);
+		assertThat(response).containsAll(booksByTitle);
+	}
+	
+	
 	@Test
 	public void getAllBooks() {
 		when(BOOK_DAO.getAllBooks()).thenReturn(books);
