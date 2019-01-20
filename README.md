@@ -26,7 +26,7 @@ git clone https://github.com/boksha85/library.git
 # Go in project folder and  install dependencies
 mvn clean install
 
-# check status of database:
+# Check status of database:
 java -jar target/library-0.0.1-SNAPSHOT.jar db status config.yml 
 
 # Tagging Your Schema
