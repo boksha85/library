@@ -1,15 +1,14 @@
 # library
-Simple project for Convey
-=======
-# Library
+Simple project for Convey for storing and showing books.
+
 
 # Prerequisites:
 - java 1.8.x
 - maven
 - appache maven
-- postgresql with database library for user/password boksha/boksha
+- postgresql with database library for user/password boksha/boksha (or change in config.yml name of the database and user/password)
 
-	# install postgresql on linnux ubuntu 18.04:
+	# install guide for  postgresql on linnux ubuntu 18.04:
 		sudo apt update
 		sudo apt install postgresql postgresql-contrib
 		sudo -i -u postgres
@@ -21,29 +20,30 @@ Simple project for Convey
 			alter user boksha with encrypted password 'boksha';
 			GRANT ALL PRIVILEGES ON DATABASE library to boksha;
 
-# How to start the Library application
+# Clone project from github
+git clone https://github.com/boksha85/library.git
+
+# Go in project folder and  install dependencies
 mvn clean install
 
-#  check status of database:
+# check status of database:
 java -jar target/library-0.0.1-SNAPSHOT.jar db status config.yml 
 
-#  Tagging Your Schema
+# Tagging Your Schema
 java -jar target/library-0.0.1-SNAPSHOT.jar db tag config.yml convey-test
 
-#  migrate schema
+# Migrate schema to add 10 books
 java -jar target/library-0.0.1-SNAPSHOT.jar db migrate config.yml
 
-#  IF NEEDED Rolling Back Your Schema 
+# IF NEEDED Rolling Back Your Schema 
 java -jar target/library-0.0.1-SNAPSHOT.jar db rollback config.yml  convey-test
 
-#  Start application with
+# Start application with
 java -jar target/library-0.0.1-SNAPSHOT.jar server config.yml
 
-# To check that your application is running enter url 
+# Run in browser 
 http://localhost:8080
 
+# Test APIs with postman
 
-Health Check
----
-
-To see your applications health enter url `http://localhost:8081/healthcheck`
+Open postman app and import collection "library-convey.postman_collection.json" from postman folder
