@@ -29,14 +29,8 @@ mvn clean install
 # Check status of database:
 java -jar target/library-0.0.1-SNAPSHOT.jar db status config.yml 
 
-# Tagging Your Schema
-java -jar target/library-0.0.1-SNAPSHOT.jar db tag config.yml convey-test
-
 # Migrate schema to add 10 books
 java -jar target/library-0.0.1-SNAPSHOT.jar db migrate config.yml
-
-# IF NEEDED Rolling Back Your Schema 
-java -jar target/library-0.0.1-SNAPSHOT.jar db rollback config.yml  convey-test
 
 # Start application with
 java -jar target/library-0.0.1-SNAPSHOT.jar server config.yml
